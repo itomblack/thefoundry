@@ -17,10 +17,44 @@ ul {
 
 
 body {
-  background-color: $purple;
+  background-color: white;
+  color: $grey1;
+}
+
+html, body {
+	width: 100%;
 }
 
 
 //===============================================================================
 // HOME STLYES
 //===============================================================================
+
+img { max-width: 100%; }
+
+div { position: relative; }
+
+.back-grey0 { background-color: $grey1; }
+
+.nav-primary {
+	position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  padding: 8px;
+  z-index: 999;
+
+  a {
+  	color: white;
+  	display: inline-block;
+  	text-align: right;
+  	margin-right: 16px;
+  }
+}
+
+.right-align {
+	position: absolute;
+	right: 0px;
+	top: 14px;
+}
