@@ -19,8 +19,8 @@ $gutter: 20px;
 
 [class*='col-'] {
   float: left;
-  padding-right: $gutter;
-  padding-left: $gutter;
+  // padding-right: $gutter;
+  // padding-left: $gutter;
 }
 
 .col-1-1 { width: 100%; }
