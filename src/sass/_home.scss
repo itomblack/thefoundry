@@ -48,10 +48,11 @@ button {
   box-shadow: inset 0 0 0 0 rgba($orange, 1);
   transition: all $short ease-in;
 
-  &:hover {
-  	box-shadow: inset 250px 0 0 0 rgba($orange, 1);
-  }
+  &:hover {	box-shadow: inset 250px 0 0 0 rgba($orange, 1); }
+
+  &:focus {	outline: 1px solid $orange; }
 }
+
 
 
 
@@ -96,7 +97,7 @@ button {
 	@include clearfix;
 }
 
-.section-wrap {	padding: 0 0 120px 0; }
+.section-wrap {	margin: 0 0 120px 0; }
 
 .video-wrap {
 	position: relative;
@@ -109,8 +110,11 @@ button {
 		width: 100%;
 		background-color: black;
 		height: 100%;
-		opacity: .2;
+		opacity: 0;
+		
+		animation: overlay-darken 3s ease forwards;
 	}
+
 
 	.intro-framestore {
 		position: absolute;
@@ -143,6 +147,12 @@ button {
 		 padding-left: 12px;
 		}
 	}
+}
+
+@keyframes overlay-darken {
+	  0%   { opacity: 0; }
+	  35%   { opacity: 0; }
+	  100% { opacity: .2; }
 }
 
 .arrow-before {
@@ -212,7 +222,7 @@ button {
   width: 100%;
 }
 
-.js-nav-container-adjust { padding-bottom: 200px; }
+.js-nav-container-adjust { padding-bottom: 80px; }
 
 .mini-nav-links {
 	a {
@@ -344,6 +354,8 @@ button {
 .padding-bottom-50 { padding-bottom: 50px; }
 
 .inline-block { display: inline-block; }
+
+.clearfix { @include clearfix; }
 
 // .bar-after { border-right: 1px solid $orange; }
 // .margin-r-1em { margin-right: 1em; }

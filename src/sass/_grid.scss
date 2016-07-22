@@ -30,7 +30,7 @@ $gutter: 20px;
 .col-1-4 { width: 25%; }
 .col-1-8 { width: 12.5%; }
 
-@media screen and ( max-width: $small ) {
+@media screen and ( max-width: $medium ) {
   [class*='col-'] { 
     width: 100%; 
     float: none;

@@ -86,7 +86,7 @@ $( document ).ready(function() {
     var hidden3Items = [];
     var hidden4Items = [];
 
-    var timeBetween = 200;
+    var timeBetween = 150;
     var animateTime = 1000;
 
     $.each($('.hidden-1'), function() { hidden1Items.push(this); });
@@ -130,7 +130,10 @@ $( document ).ready(function() {
     }
     
 
-    revealItemLoop(hidden1Items, false); 
+    //start hidden-1 after a short delay
+    setTimeout(function() { 
+        revealItemLoop(hidden1Items, false); 
+     }, 500);   
 
     //start hidden-2 after hidden-1 has finished
     setTimeout(function() { 
@@ -165,7 +168,7 @@ $( document ).ready(function() {
         var topOfPage = $(window).scrollTop();
         var menuTop = $('#second-nav-wrap').offset().top;
 
-        if ( (menuTop - topOfPage) <= 36 ) {
+        if ( (menuTop - topOfPage) <= 37 ) {
             $('#nav-secondary').addClass('js-second-nav-stick')
             $('#second-nav-wrap').addClass('js-nav-container-adjust')
         } else {
