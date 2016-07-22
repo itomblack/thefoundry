@@ -145,9 +145,60 @@ $( document ).ready(function() {
     	revealItemLoop(hidden3Items, true); 
         revealItemLoop(hidden4Items, true); 
     })
-   
-
     // ********* END REVEAL ELEMENTS ************ //
+
+
+
+
+
+
+    // ********** STICKY NAV ************ //
+    $(window).scroll( function() {
+        //black background for primary nav
+        if ($(window).scrollTop() > 0) {
+            $('#nav-primary').addClass('back-black');
+        } else {
+            $('#nav-primary').removeClass('back-black');
+        }
+
+        //if second nav gets to primary nav, stick it
+        var topOfPage = $(window).scrollTop();
+        var menuTop = $('#second-nav-wrap').offset().top;
+
+        if ( (menuTop - topOfPage) <= 36 ) {
+            $('#nav-secondary').addClass('js-second-nav-stick')
+            $('#second-nav-wrap').addClass('js-nav-container-adjust')
+        } else {
+            $('#nav-secondary').removeClass('js-second-nav-stick')
+            $('#second-nav-wrap').removeClass('js-nav-container-adjust')
+        }
+    });
+    // ********** END STICKY NAV ************ //
+
+
+
+
+
+    // ********** PARALLAX LAYERS ************ //
+        $(window).scroll( function() {
+            var scrollAmmount = ($(window).scrollTop() * 0.06);
+      
+            $('.parallax-1').css({
+                "-webkit-transform":"translateY(" + scrollAmmount + "px )",
+                "-ms-transform":"translateY(" + scrollAmmount + " px )",
+                "transform":"translateY(" + scrollAmmount + " px )"
+            })
+
+            $('.parallax-2').css({
+                "-webkit-transform":"translateY(" + scrollAmmount * 2.3 + "px )",
+                "-ms-transform":"translateY(" + scrollAmmount * 2.3 + " px )",
+                "transform":"translateY(" + scrollAmmount * 2.3 + " px )"
+            })
+        });
+    // ********** END PARALLAX LAYERS ************ //
+
+
+
 
 
 
@@ -160,7 +211,6 @@ $( document ).ready(function() {
 
 	    var elemTop = $(elem).offset().top;
 	    var elemBottom = elemTop + $(elem).height();
-
 	    // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
         return (elemTop <= docViewBottom);
 	}
