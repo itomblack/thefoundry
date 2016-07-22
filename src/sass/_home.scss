@@ -46,10 +46,10 @@ button {
   background: $grey3;
   color: black;
   box-shadow: inset 0 0 0 0 rgba($orange, 1);
-  transition: all $short ease;
+  transition: all $short ease-in;
 
   &:hover {
-  	box-shadow: inset 200px 0 0 0 rgba($orange, 1);
+  	box-shadow: inset 250px 0 0 0 rgba($orange, 1);
   }
 }
 
@@ -99,22 +99,18 @@ button {
 		width: 100%;
 		background-color: black;
 		height: 100%;
-		opacity: .45;
+		opacity: .2;
 	}
 
 	.intro-framestore {
 		position: absolute;
-		bottom: 0;
+		bottom: -10px;
 		left: 0;
-		background-color: white;
-		width: 50%;
-		min-width: 200px;
 		height: 120px;
-		padding-left: 16px;
 		z-index: 100;
 
 		img {
-			margin: 16px 0 4px 16px;
+			margin: 16px 16px 4px 0;
 			opacity: .7;
 			transition: all $short ease;
 
@@ -124,7 +120,18 @@ button {
 			}
 		}
 
-		p { margin: 0 16px; }
+		.frame-background {
+			width: 48%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+		}
+
+		p {
+		 margin: 6px 0;
+		 padding-left: 12px;
+		}
 	}
 }
 
@@ -150,11 +157,14 @@ button {
 	top: 160px;
 	width: 100%;
 	text-shadow: 0 0 12px rgba(0,0,0,.7);
+
 	h1 {
 		color: white;
 		max-width: 85%;
 	}
-
+	
+	@media screen and (max-width: 1350px) { top: 115px; }
+	@media screen and (max-width: 1500px) { top: 140px; }
 }
 
 .bar-separator {
@@ -165,9 +175,6 @@ button {
 	display: inline-block;
 	vertical-align: bottom;
 }
-
-
-
 
 .nav-secondary {
 	padding-top: 24px;
@@ -214,7 +221,7 @@ button {
 
 .feature-block-grey {
 	margin: 50px 0;
-  padding: 0 16px 0 0;
+  	padding: 0 16px 0 0;
 
 	h1,h2,h3,h4 { 
 		color: $grey3; 
@@ -222,12 +229,61 @@ button {
 	p { 
 		color: $grey2;
 	}
+
+	img {
+		width: 50px;
+		height: 50px;
+	}
 }
+
+.arrow-icon {
+	width: 10px;
+	height: 1px;
+	background-color: $grey1;
+	position: relative;
+	right: -8px;
+	top: -4px;
+	display: inline-block;
+	margin-right: 12px;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 7px;
+		height: 7px;
+		position: absolute;
+		right: 0;
+		top: -3px;
+		border-top: 1px solid $grey1;
+		border-right: 1px solid $grey1;
+		transform: rotate(45deg);
+	}
+
+}
+
+
+.hidden-video { display: none; }
+
+.canvas-video {
+	width: 100%;
+	height: 400px;
+}
+
+
+.hidden-1, .hidden-2, .hidden-3, .hidden-4 {
+	animation: all $long ease-in-out;
+	opacity: 0;
+	// filter: blur(10px);
+}
+
+
+
 
 .back-white { background-color: white; }
 
 .margin-top-60 { margin-top: 60px; }
 .margin-top-50 { margin-top: 50px; }
+.margin-top-m10 { margin-top: -10px; }
 .margin-top-m20 { margin-top: -20px; }
 .margin-top-m30 { margin-top: -30px; }
 .margin-bot-50 { margin-bottom: 50px; }

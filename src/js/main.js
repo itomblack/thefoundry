@@ -16,7 +16,7 @@ $( document ).ready(function() {
     function resizeCanvas() {
 		var windowWidth = window.innerWidth;
         canvas.width = windowWidth;
-        canvas.height = windowWidth*0.41;
+        canvas.height = windowWidth*0.45;
         canvasVideo(); 
     }
 
@@ -35,10 +35,39 @@ $( document ).ready(function() {
     function canvasVideo() {
       var $this = video; //cache
       (function loop() {
-          ctx.drawImage($this, 0, 0);
+          ctx.drawImage($this, 0, 0, canvas.width, canvas.height);
           setTimeout(loop, 1000 / 30); // drawing at 30fps
       })();
     }
+
+
+
+    // click framestore to jump
+    $('#frame-1').click( function() { 
+        video.currentTime = 0;
+        swapActiveFramestore()
+    });
+    $('#frame-2').click( function() { 
+        video.currentTime = 7;
+        swapActiveFramestore() 
+    });
+
+    function swapActiveFramestore() {
+        if ($('#frame-1').hasClass('active')) {
+            $('#frame-1').removeClass('active');
+        } else {
+            $('#frame-1').addClass('active');
+        }
+         if ($('#frame-2').hasClass('active')) {
+            $('#frame-2').removeClass('active');
+        } else {
+            $('#frame-2').addClass('active');
+        }
+    }
+
+
+
+
 
     // ********* END PLAY VIDEO IN CANVAS ************ //
 
@@ -55,13 +84,15 @@ $( document ).ready(function() {
     var hidden1Items = [];
     var hidden2Items = [];
     var hidden3Items = [];
+    var hidden4Items = [];
 
-    var timeBetween = 250;
+    var timeBetween = 200;
     var animateTime = 1000;
 
     $.each($('.hidden-1'), function() { hidden1Items.push(this); });
     $.each($('.hidden-2'), function() { hidden2Items.push(this); });
     $.each($('.hidden-3'), function() { hidden3Items.push(this); });
+    $.each($('.hidden-4'), function() { hidden4Items.push(this); });
 
 
     function revealItem(item) {
@@ -70,11 +101,14 @@ $( document ).ready(function() {
       	}, animateTime );
     }
 
+
+
+    ///THIS ISNT READING SCROLL - FIX IT
     function revealItemLoop(array, scroll) {
     	var i = 0;  
+
     	function loopReveal (array, scroll) {
     	   	setTimeout(function () {   
-
     	   		//if item on screen then show
     	   		if (scroll == true) {
     	   			if (isScrolledIntoView(array[i]) == true) {
@@ -87,24 +121,29 @@ $( document ).ready(function() {
     	      
     	      i++;                     
     	      if (i < array.length) {
-    	         loopReveal(array);
+    	         loopReveal(array, scroll);
     	      }                   
     	   }, timeBetween) 
     	}
-    	loopReveal(array)
+
+    	loopReveal(array, scroll)
     }
     
 
     revealItemLoop(hidden1Items, false); 
-  
 
+    //start hidden-2 after hidden-1 has finished
     setTimeout(function() { 
     	revealItemLoop(hidden2Items, false);
     }, timeBetween * hidden1Items.length + 1);
 
+    revealItemLoop(hidden3Items, true); 
+    revealItemLoop(hidden4Items, true); 
 
+    //test for hidden-3 + on scrolls
     $(window).scroll( function() {
     	revealItemLoop(hidden3Items, true); 
+        revealItemLoop(hidden4Items, true); 
     })
    
 
@@ -122,7 +161,8 @@ $( document ).ready(function() {
 	    var elemTop = $(elem).offset().top;
 	    var elemBottom = elemTop + $(elem).height();
 
-	    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+	    // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        return (elemTop <= docViewBottom);
 	}
 
 
