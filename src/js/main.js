@@ -85,6 +85,7 @@ $( document ).ready(function() {
     var hidden2Items = [];
     var hidden3Items = [];
     var hidden4Items = [];
+    var hidden5Items = [];
 
     var timeBetween = 150;
     var animateTime = 1000;
@@ -93,6 +94,7 @@ $( document ).ready(function() {
     $.each($('.hidden-2'), function() { hidden2Items.push(this); });
     $.each($('.hidden-3'), function() { hidden3Items.push(this); });
     $.each($('.hidden-4'), function() { hidden4Items.push(this); });
+    $.each($('.hidden-5'), function() { hidden5Items.push(this); });
 
 
     function revealItem(item) {
@@ -146,7 +148,8 @@ $( document ).ready(function() {
     //test for hidden-3 + on scrolls
     $(window).scroll( function() {
     	revealItemLoop(hidden3Items, true); 
-        revealItemLoop(hidden4Items, true); 
+        revealItemLoop(hidden4Items, true);
+        revealItemLoop(hidden5Items, true); 
     })
     // ********* END REVEAL ELEMENTS ************ //
 
