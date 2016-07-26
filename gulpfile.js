@@ -25,6 +25,8 @@ var path = {
         destCss: 'dist/css/',
         img: 'src/img/**/*.*',
         destImg: 'dist/img/',
+        video: 'src/video/**/*.*',
+        destVideo: 'dist/video/',
         dest: 'dist/',
 };
 
@@ -72,6 +74,11 @@ gulp.task('img', function(){
   .pipe(gulp.dest(path.destImg));
 });
 
+gulp.task('video', function(){
+  gulp.src([path.video])
+  .pipe(gulp.dest(path.destVideo));
+});
+
 gulp.task('html', function(){
   return gulp.src([path.html])
     .pipe(fileinclude({
@@ -106,5 +113,5 @@ gulp.task( 'sass', function() {
 
 // default task
 gulp.task( 'default', function(cb){
-  gulpSequence(['clean'], ['img'],  ['js', 'sass'], ['html'], ['server', 'watch'] )(cb);
+  gulpSequence(['clean'], ['img'], ['video'],  ['js', 'sass'], ['html'], ['server', 'watch'] )(cb);
 });
