@@ -20,7 +20,7 @@ h1 {
 
 h2 {
 	font-size: 38px;
-	line-height: 68px;
+	line-height: 45px;
 	font-weight: 500;
 }
 
@@ -42,6 +42,8 @@ p {
 	line-height: 30px;
 	font-weight: 300;
 }
+
+button { font-size: 20px; }
 
 a {
 	font-size: 14px;
@@ -74,8 +76,19 @@ a {
 			// width: 100%;
 		}
 	}
+
+	&.text-orange:before { background-color: $orange; }
+	&.text-grey0:before { background-color: $grey0; }
+	&.text-grey1:before { background-color: $grey1; }
+	&.text-grey2:before { background-color: $grey2; }
+	&.text-grey3:before { background-color: $grey3; }
 }
 
+.active-link:before { 
+	background-color: $orange !important;
+	visibility: visible;
+	transform: scaleX(1);
+}
 
 .size-14 { font-size: 14px; }
 .size-20 { font-size: 20px; }
@@ -84,15 +97,11 @@ a {
 .weight-500 { font-weight: 500; }
 .weight-700 { font-weight: 700; }
 
-.text-orange { 
-	color: $orange;
-	&:before {
-		background-color: $orange;
-	}
-}
+.text-orange { color: $orange; }
 
 .text-black { color: black; }
 .text-white { color: white; }
+.text-grey0{ color: $grey0; }
 .text-grey1{ color: $grey1; }
 .text-grey2 { color: $grey2; }
 .text-grey3 { color: $grey3; }

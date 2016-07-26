@@ -7,16 +7,16 @@ $( document ).ready(function() {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     var video = document.getElementById('video');
-    var windowWidth = window.innerWidth;
+    var windowWidth = $('body').width(); // was window.innerWidth;
 
     
     //rezise to browser
     window.addEventListener('resize', resizeCanvas, false);
 
     function resizeCanvas() {
-		var windowWidth = window.innerWidth;
+		var windowWidth = $('body').width(); //was window.innerWidth;
         canvas.width = windowWidth;
-        canvas.height = windowWidth*0.45;
+        canvas.height = windowWidth*0.52;
         canvasVideo(); 
     }
 
@@ -35,7 +35,7 @@ $( document ).ready(function() {
     function canvasVideo() {
       var $this = video; //cache
       (function loop() {
-          ctx.drawImage($this, 0, 0, canvas.width, canvas.height);
+          ctx.drawImage($this, 0, 0, (canvas.width*1.1066), canvas.height);
           setTimeout(loop, 1000 / 30); // drawing at 30fps
       })();
     }
@@ -65,10 +65,6 @@ $( document ).ready(function() {
         }
     }
 
-
-
-
-
     // ********* END PLAY VIDEO IN CANVAS ************ //
 
 
@@ -84,72 +80,82 @@ $( document ).ready(function() {
     var hidden1Items = [];
     var hidden2Items = [];
     var hidden3Items = [];
-    var hidden4Items = [];
-    var hidden5Items = [];
 
-    var timeBetween = 150;
     var animateTime = 1000;
+    var timeBetween = 250;
+    var timeBetweenScrolledOnes = 150;
 
     $.each($('.hidden-1'), function() { hidden1Items.push(this); });
     $.each($('.hidden-2'), function() { hidden2Items.push(this); });
-    $.each($('.hidden-3'), function() { hidden3Items.push(this); });
-    $.each($('.hidden-4'), function() { hidden4Items.push(this); });
-    $.each($('.hidden-5'), function() { hidden5Items.push(this); });
+
+    $.each($('.hidden-3'), function() { 
+        if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed')==false)) {
+            hidden3Items.push(this);
+        }
+    });
 
 
     function revealItem(item) {
     	$(item).animate({
-        opacity: 1,
-      	}, animateTime );
+            opacity: 1
+      	}, animateTime ).css({
+            "-webkit-transform":"translate(0,0)",
+            "-ms-transform":"translate(0,0)",
+            "transform":"translate(0,0)",
+            "transition": "transform 1000ms"
+          })
+        ;
+
+        $(item).addClass('js-revealed');
     }
 
 
 
     ///THIS ISNT READING SCROLL - FIX IT
-    function revealItemLoop(array, scroll) {
+    function revealItemLoop(array, scroll, timeBreak) {
     	var i = 0;  
 
-    	function loopReveal (array, scroll) {
-    	   	setTimeout(function () {   
-    	   		//if item on screen then show
-    	   		if (scroll == true) {
-    	   			if (isScrolledIntoView(array[i]) == true) {
-    	   				revealItem(array[i])		
-    	   			}
-    	   		} else {
-    	   			revealItem(array[i])		
-    	   		}
-    	      	
-    	      
-    	      i++;                     
-    	      if (i < array.length) {
-    	         loopReveal(array, scroll);
-    	      }                   
-    	   }, timeBetween) 
+    	function loopReveal (array, scroll, timeBreak) {
+    	   	setTimeout(function () {       	
+    	       
+               revealItem(array[i]);
+
+    	       i++;                     
+    	       if (i < array.length) {
+    	           loopReveal(array, scroll, timeBreak);
+    	       }                   
+    	   }, timeBreak) 
     	}
 
-    	loopReveal(array, scroll)
+    	loopReveal(array, scroll, timeBreak)
     }
     
 
     //start hidden-1 after a short delay
     setTimeout(function() { 
-        revealItemLoop(hidden1Items, false); 
+        revealItemLoop(hidden1Items, false, timeBetween); 
      }, 500);   
 
     //start hidden-2 after hidden-1 has finished
     setTimeout(function() { 
-    	revealItemLoop(hidden2Items, false);
-    }, timeBetween * hidden1Items.length + 1);
+    	revealItemLoop(hidden2Items, false, timeBetween);
+    }, timeBetween * (hidden1Items.length + 3) );
 
-    revealItemLoop(hidden3Items, true); 
-    revealItemLoop(hidden4Items, true); 
+    revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes);  
 
     //test for hidden-3 + on scrolls
     $(window).scroll( function() {
-    	revealItemLoop(hidden3Items, true); 
-        revealItemLoop(hidden4Items, true);
-        revealItemLoop(hidden5Items, true); 
+
+        hidden3Items = [];
+
+        $.each($('.hidden-3'), function() { 
+            if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed') == false ) ) {
+                hidden3Items.push(this);
+            }
+        });
+
+    	revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes); 
+
     })
     // ********* END REVEAL ELEMENTS ************ //
 
@@ -169,17 +175,92 @@ $( document ).ready(function() {
 
         //if second nav gets to primary nav, stick it
         var topOfPage = $(window).scrollTop();
-        var menuTop = $('#second-nav-wrap').offset().top;
+        
+        if ( $('#second-nav-wrap').length ) {
+            var menuTop = $('#second-nav-wrap').offset().top;
 
-        if ( (menuTop - topOfPage) <= 37 ) {
-            $('#nav-secondary').addClass('js-second-nav-stick')
-            $('#second-nav-wrap').addClass('js-nav-container-adjust')
-        } else {
-            $('#nav-secondary').removeClass('js-second-nav-stick')
-            $('#second-nav-wrap').removeClass('js-nav-container-adjust')
+            if ( (menuTop - topOfPage) <= 45 ) {
+                $('#nav-secondary').addClass('js-second-nav-stick')
+                $('#second-nav-wrap').addClass('js-nav-container-adjust')
+            } else {
+                $('#nav-secondary').removeClass('js-second-nav-stick')
+                $('#second-nav-wrap').removeClass('js-nav-container-adjust')
+            }
         }
     });
     // ********** END STICKY NAV ************ //
+
+
+
+
+
+
+    // ********** SHOW PRODUCT NAV-1 ************ //
+
+    $('#nav-reveal').click( function(e) {
+        
+        e.preventDefault();
+        var duration = 500;
+        var navPrimHeight = $('#nav-primary').outerHeight();
+        var navHiddenHeight = $('#nav-1-wrap').outerHeight();
+
+        $('#nav-primary').toggleClass('js-back-black');
+
+
+
+        // MOVING BANNER NAV
+
+        if ( $('#nav-1-wrap').length ) {
+            //if closed, open
+            if( $('#nav-1-wrap').hasClass('js-open-marker') ) {
+
+                $('#nav-1-wrap').animate({ top: -navHiddenHeight + "px" }, duration );
+                $('#content-all').animate({ marginTop: 0 + "px" }, duration );
+
+            } else {
+
+                $('#nav-1-wrap').animate({ top: navPrimHeight + "px" }, duration );
+                $('#content-all').animate({ marginTop: navPrimHeight + navHiddenHeight + "px" }, duration );
+            
+            }
+
+            $('#nav-1-wrap').toggleClass('js-open-marker');
+        }
+            
+
+
+
+        // OPACITY FULL PAGE NAV
+
+         if ( $('#nav-2-wrap').length ) {
+            //if closed, open
+            if( $('#nav-2-wrap').hasClass('js-open-marker') ) {
+                $('#nav-2-wrap').animate({ 
+                    opacity: 0,
+                    top: '0px'
+                }, duration );
+            } else {
+                $('#nav-2-wrap').animate({
+                    opacity: 1,
+                    top: '60px'
+                }, duration );
+            }
+
+            $('#nav-2-wrap').toggleClass('js-open-marker');
+        }
+
+
+
+
+
+    })
+
+    // ********** END SHOW PRODUCT NAV ************ //
+
+
+
+
+
 
 
 
@@ -208,6 +289,15 @@ $( document ).ready(function() {
 
 
 
+    $(".product-link").click( function() {
+        window.location.href = (window.location.href.replace('/#', '') + "product.html")
+    });
+
+    $(".home-link").click( function() {
+        window.location.href = (window.location.href.replace('/product.html', ''));
+    });
+
+
 
 
 
@@ -218,7 +308,9 @@ $( document ).ready(function() {
 	    var elemTop = $(elem).offset().top;
 	    var elemBottom = elemTop + $(elem).height();
 	    // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-        return (elemTop <= docViewBottom);
+        return (elemTop <= docViewBottom - 100);
+
+        console.log(elemTop);
 	}
 
 

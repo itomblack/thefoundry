@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="314px" height="110px" viewBox="0 0 314 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>vid-controls</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Product-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="TF_Product-Page-1440" transform="translate(-1051.000000, -5152.000000)">
+            <g id="whos-using-nuke-4" transform="translate(0.000000, 4664.000000)">
+                <g id="videos" transform="translate(0.000000, 488.000000)">
+                    <g id="quotes" transform="translate(700.000000, 0.000000)">
+                        <g id="vid-controls" transform="translate(351.000000, 0.000000)">
+                            <g id="controls">
+                                <rect id="Rectangle-187" fill="#FFFFFF" x="0" y="0" width="110" height="110"></rect>
+                                <rect id="Rectangle-187" fill="#FFFFFF" x="108" y="0" width="206" height="110"></rect>
+                                <polygon id="ic-play" fill-opacity="0.5" fill="#000000" points="35 64 35 47 49.3846154 55.5"></polygon>
+                                <text id="Play" font-family="AvenirLTStd-Light, Avenir LT Std" font-size="20" font-weight="300" line-spacing="30" fill-opacity="0.5" fill="#000000">
+                                    <tspan x="60" y="54">Play</tspan>
+                                </text>
+                            </g>
+                            <g id="ic-arrow-down" transform="translate(261.000000, 46.000000)" stroke-opacity="0.5" stroke="#000000">
+                                <g transform="translate(9.000000, 9.500000) rotate(-90.000000) translate(-9.000000, -9.500000) translate(1.500000, 0.500000)">
+                                    <path d="M7.5,-4.2862638e-16 L7.5,17" id="Line"></path>
+                                    <polyline id="Path-398" points="0 10 7.5 17.5 15 10"></polyline>
+                                </g>
+                            </g>
+                            <g id="ic-arrow-down" transform="translate(222.000000, 55.500000) rotate(180.000000) translate(-222.000000, -55.500000) translate(213.000000, 46.000000)" stroke-opacity="0.5" stroke="#000000">
+                                <g transform="translate(9.000000, 9.500000) rotate(-90.000000) translate(-9.000000, -9.500000) translate(1.500000, 0.500000)">
+                                    <path d="M7.5,-4.2862638e-16 L7.5,17" id="Line"></path>
+                                    <polyline id="Path-398" points="0 10 7.5 17.5 15 10"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
