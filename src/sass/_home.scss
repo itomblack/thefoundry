@@ -569,31 +569,38 @@ button {
 
 
 .text-swap {
-	
+	text-align: left;
+
 	&:before {
-		animation: textSwapping 3s forwards;
+		animation: textSwapping 3s alternate infinite;
 		content: '_Explosions';
 		display: inline-block;
 		width: 300px;
+		text-align: left;
 	}
 }
 
 @keyframes textSwapping {
 	  0%   { content: '_Explosions'; }
-	  5%   { content: '_Explosion'; }
-	  10% { content: '_Explosio'; }
-	  15% { content: '_Explosi'; }
-	  20% { content: '_Explos'; }
-	  25% { content: '_Explo'; }
-	  30% { content: '_Expl'; }
-	  35% { content: '_Exp'; }
-	  40% { content: '_Ex'; }
+	  15%   { content: '_Explosions'; }
+	  18%   { content: '_Explosion'; }
+	  21% { content: '_Explosio'; }
+	  24% { content: '_Explosi'; }
+	  27% { content: '_Explos'; }
+	  30% { content: '_Explo'; }
+	  33% { content: '_Expl'; }
+	  36% { content: '_Exp'; }
+	  39% { content: '_Ex'; }
+	  41% { content: '_E'; }
+	  44% { content: '_'; }
+	  64% { content: '_'; }
+	  67% { content: '_E'; }
 	  70% { content: '_Ex'; }
-	  75% { content: '_Exp'; }
-	  80% { content: '_Expe'; }
-	  85% { content: '_Exper'; }
-	  90% { content: '_Expert'; }
-	  95% { content: '_Experts'; }
+	  73% { content: '_Exp'; }
+	  76% { content: '_Expe'; }
+	  79% { content: '_Exper'; }
+	  82% { content: '_Expert'; }
+	  85% { content: '_Experts'; }
 	  100% { content: '_Experts'; }
 }
 

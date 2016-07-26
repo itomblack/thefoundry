@@ -993,331 +993,375 @@ button {
   display: block;
   opacity: 0; }
 
-/* line 573, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-.text-swap:before {
-  -webkit-animation: textSwapping 3s forwards;
-  animation: textSwapping 3s forwards;
-  content: '_Explosions';
-  display: inline-block;
-  width: 300px; }
+/* line 571, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+.text-swap {
+  text-align: left; }
+  /* line 574, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  .text-swap:before {
+    -webkit-animation: textSwapping 3s alternate infinite;
+    animation: textSwapping 3s alternate infinite;
+    content: '_Explosions';
+    display: inline-block;
+    width: 300px;
+    text-align: left; }
 
 @-webkit-keyframes textSwapping {
-  /* line 582, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  /* line 584, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   0% {
     content: '_Explosions'; }
 
-  /* line 583, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  5% {
-    content: '_Explosion'; }
-
-  /* line 584, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  10% {
-    content: '_Explosio'; }
-
   /* line 585, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   15% {
-    content: '_Explosi'; }
+    content: '_Explosions'; }
 
   /* line 586, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  20% {
-    content: '_Explos'; }
+  18% {
+    content: '_Explosion'; }
 
   /* line 587, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  25% {
-    content: '_Explo'; }
+  21% {
+    content: '_Explosio'; }
 
   /* line 588, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  30% {
-    content: '_Expl'; }
+  24% {
+    content: '_Explosi'; }
 
   /* line 589, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  35% {
-    content: '_Exp'; }
+  27% {
+    content: '_Explos'; }
 
   /* line 590, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  40% {
-    content: '_Ex'; }
+  30% {
+    content: '_Explo'; }
 
   /* line 591, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  70% {
-    content: '_Ex'; }
+  33% {
+    content: '_Expl'; }
 
   /* line 592, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  75% {
+  36% {
     content: '_Exp'; }
 
   /* line 593, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  80% {
-    content: '_Expe'; }
+  39% {
+    content: '_Ex'; }
 
   /* line 594, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  85% {
-    content: '_Exper'; }
+  41% {
+    content: '_E'; }
 
   /* line 595, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  90% {
-    content: '_Expert'; }
+  44% {
+    content: '_'; }
 
   /* line 596, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  95% {
-    content: '_Experts'; }
+  64% {
+    content: '_'; }
 
   /* line 597, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  67% {
+    content: '_E'; }
+
+  /* line 598, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  70% {
+    content: '_Ex'; }
+
+  /* line 599, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  73% {
+    content: '_Exp'; }
+
+  /* line 600, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  76% {
+    content: '_Expe'; }
+
+  /* line 601, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  79% {
+    content: '_Exper'; }
+
+  /* line 602, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  82% {
+    content: '_Expert'; }
+
+  /* line 603, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  85% {
+    content: '_Experts'; }
+
+  /* line 604, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   100% {
     content: '_Experts'; } }
 
 @keyframes textSwapping {
-  /* line 582, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  /* line 584, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   0% {
     content: '_Explosions'; }
 
-  /* line 583, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  5% {
-    content: '_Explosion'; }
-
-  /* line 584, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  10% {
-    content: '_Explosio'; }
-
   /* line 585, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   15% {
-    content: '_Explosi'; }
+    content: '_Explosions'; }
 
   /* line 586, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  20% {
-    content: '_Explos'; }
+  18% {
+    content: '_Explosion'; }
 
   /* line 587, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  25% {
-    content: '_Explo'; }
+  21% {
+    content: '_Explosio'; }
 
   /* line 588, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  30% {
-    content: '_Expl'; }
+  24% {
+    content: '_Explosi'; }
 
   /* line 589, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  35% {
-    content: '_Exp'; }
+  27% {
+    content: '_Explos'; }
 
   /* line 590, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  40% {
-    content: '_Ex'; }
+  30% {
+    content: '_Explo'; }
 
   /* line 591, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  70% {
-    content: '_Ex'; }
+  33% {
+    content: '_Expl'; }
 
   /* line 592, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  75% {
+  36% {
     content: '_Exp'; }
 
   /* line 593, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  80% {
-    content: '_Expe'; }
+  39% {
+    content: '_Ex'; }
 
   /* line 594, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  85% {
-    content: '_Exper'; }
+  41% {
+    content: '_E'; }
 
   /* line 595, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  90% {
-    content: '_Expert'; }
+  44% {
+    content: '_'; }
 
   /* line 596, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
-  95% {
-    content: '_Experts'; }
+  64% {
+    content: '_'; }
 
   /* line 597, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  67% {
+    content: '_E'; }
+
+  /* line 598, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  70% {
+    content: '_Ex'; }
+
+  /* line 599, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  73% {
+    content: '_Exp'; }
+
+  /* line 600, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  76% {
+    content: '_Expe'; }
+
+  /* line 601, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  79% {
+    content: '_Exper'; }
+
+  /* line 602, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  82% {
+    content: '_Expert'; }
+
+  /* line 603, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  85% {
+    content: '_Experts'; }
+
+  /* line 604, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   100% {
     content: '_Experts'; } }
 
-/* line 601, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 608, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .js-back-black {
   background-color: black; }
 
-/* line 605, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 612, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .nav-prod-wrap img {
   opacity: 0.5;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   margin-right: 48px;
   cursor: pointer; }
-  /* line 611, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  /* line 618, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   .nav-prod-wrap img:hover {
     opacity: 1; }
 
-/* line 615, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 622, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .plugin-wrap {
   margin-top: 60px; }
-  /* line 618, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+  /* line 625, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
   .plugin-wrap img {
     cursor: pointer; }
 
-/* line 627, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 634, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .max-w-100perc {
   max-width: 100%; }
 
-/* line 628, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 635, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .max-w-70perc {
   max-width: 70%; }
 
-/* line 630, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 637, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-white {
   background-color: white; }
 
-/* line 631, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 638, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-orange {
   background-color: #FCB434; }
 
-/* line 632, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 639, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-orange2 {
   background-color: #D6931E; }
 
-/* line 633, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 640, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey0 {
   background-color: #272727; }
 
-/* line 634, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 641, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey05 {
   background-color: #303030; }
 
-/* line 635, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 642, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey1 {
   background-color: #494845; }
 
-/* line 636, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 643, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey2 {
   background-color: #828282; }
 
-/* line 637, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 644, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey25 {
   background-color: #D8D8D8; }
 
-/* line 638, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 645, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey3 {
   background-color: #EAEAEA; }
 
-/* line 639, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 646, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey4 {
   background-color: #F0F0F0; }
 
-/* line 640, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 647, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-grey5 {
   background-color: #F5F5F5; }
 
-/* line 641, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 648, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .back-black {
   background-color: black; }
 
-/* line 643, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 650, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-5 {
   margin-top: 5px; }
 
-/* line 644, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 651, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-10 {
   margin-top: 10px; }
 
-/* line 645, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 652, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-40 {
   margin-top: 40px; }
 
-/* line 646, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 653, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-50 {
   margin-top: 50px; }
 
-/* line 647, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 654, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-60 {
   margin-top: 60px; }
 
-/* line 648, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 655, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-70 {
   margin-top: 70px; }
 
-/* line 649, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 656, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-80 {
   margin-top: 80px; }
 
-/* line 650, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 657, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-90 {
   margin-top: 90px; }
 
-/* line 651, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 658, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-100 {
   margin-top: 100px; }
 
-/* line 652, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 659, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-160 {
   margin-top: 160px; }
 
-/* line 653, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 660, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-m2 {
   margin-top: -2px; }
 
-/* line 654, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 661, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-m10 {
   margin-top: -10px; }
 
-/* line 655, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 662, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-m20 {
   margin-top: -20px; }
 
-/* line 656, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 663, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-m30 {
   margin-top: -30px; }
 
-/* line 657, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 664, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-top-m300 {
   margin-top: -300px; }
 
-/* line 658, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 665, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-bot-36 {
   margin-bottom: 36px; }
 
-/* line 659, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 666, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-bot-50 {
   margin-bottom: 50px; }
 
-/* line 660, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 667, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-bot-60 {
   margin-bottom: 60px; }
 
-/* line 661, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 668, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-bot-90 {
   margin-bottom: 90px; }
 
-/* line 662, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 669, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-bot-100 {
   margin-bottom: 100px; }
 
-/* line 663, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 670, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-bot-160 {
   margin-bottom: 160px; }
 
-/* line 665, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 672, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .margin-right-16-0 {
   margin: 0 16px 0 0; }
 
-/* line 667, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 674, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .padding-top-bottom-big {
   padding: 190px 0; }
 
-/* line 669, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 676, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .padding-top-0 {
   padding-top: 0; }
 
-/* line 670, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 677, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .padding-top-50 {
   padding-top: 50px; }
 
-/* line 671, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 678, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .padding-top-90 {
   padding-top: 90px; }
 
-/* line 672, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 679, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .padding-bottom-50 {
   padding-bottom: 50px; }
 
-/* line 674, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
+/* line 681, /Users/allofusadmin/Desktop/repos/thefoundry/src/sass/_home.scss */
 .inline-block {
   display: inline-block; }
 
