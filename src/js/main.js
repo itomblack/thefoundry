@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 
-
+    // $(window).on('load', function() {
+    //    // $("#cover").hide();
+    // });
 
 	// ********* PLAY VIDEO IN CANVAS ************ //
 
