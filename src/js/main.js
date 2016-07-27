@@ -39,7 +39,8 @@ $( document ).ready(function() {
     function canvasVideo() {
       var $this = video; //cache
       (function loop() {
-          ctx.drawImage($this, 0, 0, (canvas.width*1.1066), canvas.height);
+          // ctx.drawImage($this, -2, 0, (canvas.width*1.1066), canvas.height);
+          ctx.drawImage($this, -1, 0, (canvas.width*1.01), canvas.height);
           setTimeout(loop, 1000 / 30); // drawing at 30fps
       })();
     }
@@ -92,11 +93,12 @@ $( document ).ready(function() {
     $.each($('.hidden-1'), function() { hidden1Items.push(this); });
     $.each($('.hidden-2'), function() { hidden2Items.push(this); });
 
-    $.each($('.hidden-3'), function() { 
-        if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed')==false)) {
-            hidden3Items.push(this);
-        }
-    });
+    $.each($('.hidden-3'), function() { hidden3Items.push(this); });
+    // $.each($('.hidden-3'), function() { 
+    //     if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed')==false)) {
+    //         hidden3Items.push(this);
+    //     }
+    // });
 
 
 
@@ -147,22 +149,25 @@ $( document ).ready(function() {
     	revealItemLoop(hidden2Items, false, timeBetween);
     }, timeBetween * (hidden1Items.length + 3) );
 
+
+
     revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes);  
-
     //test for hidden-3 + on scrolls
-    $(window).scroll( function() {
+    // $(window).scroll( function() {
 
-        hidden3Items = [];
+    //     hidden3Items = [];
 
-        $.each($('.hidden-3'), function() { 
-            if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed') == false ) ) {
-                hidden3Items.push(this);
-            }
-        });
+    //     $.each($('.hidden-3'), function() { 
+    //         if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed') == false ) ) {
+    //             hidden3Items.push(this);
+    //         }
+    //     });
 
-    	revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes); 
+    // 	revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes); 
 
-    })
+    // })
+
+
     // ********* END REVEAL ELEMENTS ************ //
 
 
