@@ -233,25 +233,34 @@ $( document ).ready(function() {
 
 
         // OPACITY FULL PAGE NAV
-
          if ( $('#nav-2-wrap').length ) {
-            //if closed, open
+                
             if( $('#nav-2-wrap').hasClass('js-open-marker') ) {
-
-                $('#nav-2-wrap').removeClass('js-z550');
+                
                 $('#nav-2-wrap').animate({ 
                     opacity: 0,
                     top: '0px'
                 }, duration );
+
+                setTimeout( function() {
+                    $('#nav-2-wrap').removeClass('js-z550');
+                }, duration )
+
             } else {
-                $('#nav-2-wrap').addClass('js-z550');
+                //if closed, open 
+                $('#nav-2-wrap').addClass('js-z550');   
                 $('#nav-2-wrap').animate({
                     opacity: 1,
                     top: '60px'
                 }, duration );
+                
+                
             }
 
+            
+
             $('#nav-2-wrap').toggleClass('js-open-marker');
+
         }
 
 

@@ -550,6 +550,7 @@ button {
 }
 
 
+// ***************** MENU ***************** //
 .nav-1-wrap {
 	position: fixed;
 	width: 100%;
@@ -568,7 +569,6 @@ button {
 	height: 100%;
 	left: 0;
 	top: 0px;
-  // padding: 60px 0;
   padding: 0 0;
   z-index: 0;
   display: block;
@@ -646,6 +646,42 @@ button {
 	opacity: 0.1;
 	transition: opacity $short ease-in-out;
 }
+
+
+.js-open-marker {
+	.menu-item-wrap {
+		transform: translateY(-30px);
+		opacity: 0;
+		// animation: all 0.3s ease-in-out;
+		&:nth-of-type(0){ animation: moveDown 0.3s 0s forwards ease-in-out; }
+		&:nth-of-type(1){ animation: moveDown 0.3s 0.05s forwards ease-in-out; }
+		&:nth-of-type(2){ animation: moveDown 0.3s 0.1s forwards ease-in-out; }
+		&:nth-of-type(3){ animation: moveDown 0.3s 0.15s forwards ease-in-out; }
+		&:nth-of-type(4){ animation: moveDown 0.3s 0.2s forwards ease-in-out; }
+		&:nth-of-type(5){ animation: moveDown 0.3s 0.25s forwards ease-in-out; }
+		&:nth-of-type(6){ animation: moveDown 0.3s 0.3s forwards ease-in-out; }	
+		&:nth-of-type(7){ animation: moveDown 0.3s 0.35s forwards ease-in-out; }		
+	}
+}
+
+@keyframes moveDown {
+	  0%   { 
+	  	transform: translateY(-30px);
+	  	opacity: 0;
+	  	}
+	  100% {
+	  	transform: translateY(0px);
+	  	opacity: 1;
+	  }
+}
+
+
+// ***************** END MENU ***************** //
+
+
+
+
+
 
 .full-height { height: 100%; }
 
@@ -757,6 +793,11 @@ button {
               animation-delay: -0.8s; }
 
 // ***************** END LOADER ***************** //
+
+
+
+
+
 
 
 
