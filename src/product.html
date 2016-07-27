@@ -5,12 +5,22 @@
   <title>Nuke</title>
 </head>
 <body>
+
+<div id="cover" class="cover">
+	 <div class="loader">
+        <div class="loader-inner cube-transition">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+</div>
+
 <div class="hide-over-x">
 	<!-- Primary nav -->
 	@@include('./inc/nav-prim.html')
 
 	<!-- primary nav menu -->
-	@@include('./inc/nav-2.html')
+	@@include('./inc/sub-nav.html')
 
 
 	<div id="content-all" class="margin-top-m2">
@@ -54,23 +64,7 @@
 		<div class="back-white clearfix margin-top-m10">
 
 			<!-- Secondary nav -->
-			<div id="second-nav-wrap" class="section-wrap padding-top-0" >
-				<div class="nav-secondary hidden-2" id="nav-secondary">
-					<div class="width-1440">
-						<div class="content-wrap">
-							<p class="size-14 inline-block">What's new in NUKE 10 <span class="arrow-icon"></span></p>
-							<div class="nav-links-rhs">
-								<a href="#">Features</a>
-								<a href="#">Releases</a>
-								<a href="#">Learn</a>
-								<a href="#">Tech Specs</a>
-								<a href="#">Developers</a>
-								<a href="#">FAQs</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			@@include('./inc/nav-secondary.html')
 
 
 			<!-- Section NUKE -->

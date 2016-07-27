@@ -210,29 +210,98 @@ button {
 	vertical-align: bottom;
 }
 
+.secondary-nav-wrap {
+	z-index: 600;
+}
+
 .nav-secondary {
-	padding-top: 24px;
-  background-color: none;
-  transition: all $long ease;
+  background-color: white;
+  height: 60px;
+  top: 40px;
+	
+	.menu-new { margin-top: 16px; }
 
 	.nav-links-rhs {
-		float: right;
-    top: 18px;
+		position: absolute;
+		left: 50%;
+    top: 0px;
+    height: 60px;
 		
 		a {
 			text-transform: uppercase;
 			color: $grey1;
+			display: inline-block;
+			height: 100%;
+			padding: 20px 0 0 0;
+			margin: 0 16px 0 0;
 
 			&:before { background-color: $grey1; }
 		}
 	}
+
+	.hidden-menu-item {
+		width: 90px;
+		text-align: center;
+		margin: 0 0 0 0 !important;
+		opacity: 0;
+		transition: all $short ease;
+		height: 100%;
+		display: inline-block;
+		vertical-align: top;
+		padding-top: 18px;
+		background-color: $orange;
+
+		position: absolute;
+		right: 0;
+		top: -30px;
+
+		cursor: pointer;
+
+		&:before { display: none; }
+		
+		&.item-1 {
+			right: 90px;
+			border-right: 1px solid $orange2;
+		}
+
+		.js-nav-container-adjust & {
+			top: 0;
+			opacity: 1;
+		}
+
+		// &:hover {
+		// 	// box-shadow: inset 100px 0 0 0 rgba($grey3, 1);
+		// 	background-color: $grey3;
+		// }
+	}
+}
+
+.hidden-menu-logo {
+	position: absolute;
+	left: 0px;
+	top: -30px;
+	background-color: white;
+	width: 250px;
+	height: 100%;
+	z-index: 10;
+	opacity: 0;
+	transition: all $short ease;
+
+	img {
+		position: absolute;
+    top: 10px;
+    left: 26px;
+	}
+
+	.js-second-nav-stick & {
+		opacity: 1;
+		top: 0;
+	}
 }
 
 .js-second-nav-stick {
-	// padding-top: 3px;
-  background-color: white;
   position: fixed;
-  top: 38px;
+  top: 60px;
   left: 0;
   z-index: 500;
   width: 100%;
@@ -532,6 +601,16 @@ button {
 	// filter: blur(10px);
 }
 
+.hidden-6 {
+	opacity: 0;
+	animation: revealMenu $med 0.7s forwards ease;
+}
+
+@keyframes revealMenu {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
 .float-right-link{
 	float: right;
 	margin-top: 4px;
@@ -575,7 +654,9 @@ button {
   opacity: 0;
 }
 
-.js-z550 { z-index: 550; }
+.js-z550 { z-index: 650; }
+
+.js-z0 { z-index: 0; }
 
 
 .nav-prod-wrap {
@@ -596,7 +677,8 @@ button {
 .menu-logo {
 	height: 34px;
 	position: absolute;
-  left: 58px;
+  left: 30px;
+  top: 24px;
   top: calc(50% - 17px);
 }
 
@@ -604,7 +686,7 @@ button {
 	font-size: 16px;
 	color: white;
 	position: absolute;
-  right: 64px;
+  right: 42px;
   height: 30px;
   top: calc(50% - 15px);
   margin: 0;
@@ -728,6 +810,8 @@ button {
 	width: 100%;
 	height: 100%;
 	position: fixed;
+	left: 0;
+	top: 0;
 	background-color: white;
 	z-index: 1000;
 }

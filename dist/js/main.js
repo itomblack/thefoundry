@@ -1,8 +1,9 @@
 $( document ).ready(function() {
 
-    // $(window).on('load', function() {
-    //    // $("#cover").hide();
-    // });
+    $(window).on('load', function() {
+       $("#cover").hide( 100 );
+       video.play();
+    });
 
 	// ********* PLAY VIDEO IN CANVAS ************ //
 
@@ -24,9 +25,10 @@ $( document ).ready(function() {
 
     resizeCanvas();
 
-    video.autoplay = true;
-    video.muted = true;
-	video.load();
+     // video.autoplay = true;
+     video.autoplay = false;
+     video.muted = true;
+	   video.load();
 
 	video.addEventListener('ended', function () {
 	    this.currentTime = 0;
@@ -97,6 +99,8 @@ $( document ).ready(function() {
     });
 
 
+
+
     function revealItem(item) {
     	$(item).animate({
             opacity: 1
@@ -164,10 +168,16 @@ $( document ).ready(function() {
 
 
 
-
-
+    
     // ********** STICKY NAV ************ //
+    var scrollPos = $(window).scrollTop();
+    var menuTop;
+    var topOfPage = $(window).scrollTop();
+
     $(window).scroll( function() {
+
+        var scroll = $(window).scrollTop();
+
         //black background for primary nav
         if ($(window).scrollTop() > 0) {
             $('#nav-primary').addClass('back-black');
@@ -176,20 +186,65 @@ $( document ).ready(function() {
         }
 
         //if second nav gets to primary nav, stick it
-        var topOfPage = $(window).scrollTop();
+        topOfPage = $(window).scrollTop();
         
         if ( $('#second-nav-wrap').length ) {
-            var menuTop = $('#second-nav-wrap').offset().top;
+            menuTop = $('#second-nav-wrap').offset().top;
 
-            if ( (menuTop - topOfPage) <= 45 ) {
-                $('#nav-secondary').addClass('js-second-nav-stick')
-                $('#second-nav-wrap').addClass('js-nav-container-adjust')
+            if ( (menuTop - topOfPage) <= 38 ) {
+                $('#nav-secondary').addClass('js-second-nav-stick');
+                $('#second-nav-wrap').addClass('js-nav-container-adjust');
+
             } else {
-                $('#nav-secondary').removeClass('js-second-nav-stick')
-                $('#second-nav-wrap').removeClass('js-nav-container-adjust')
+                $('#nav-secondary').removeClass('js-second-nav-stick');
+                $('#second-nav-wrap').removeClass('js-nav-container-adjust');
             }
         }
+
+
+        // make primary menu hide off screen when scrolling
+
+        if(scroll > scrollPos) {
+         // scrolling downwards
+         if ( $('#nav-secondary').hasClass('js-second-nav-stick') ) {
+            if ( !$('#nav-primary').hasClass('js-has-moved') ) {
+              $('#nav-primary').animate({ top: '-55px' }, 300 );
+              $('#nav-secondary').animate({ top: '5px' }, 300 );
+              $('#nav-primary').addClass('js-has-moved');
+            }
+         }
+
+        } else {
+             // scrolling upwards
+             if ( $('#nav-primary').hasClass('js-has-moved') ) {
+                $('#nav-primary').animate({ top: '0px' }, 300 );
+                $('#nav-secondary').animate({ top: '60px' }, 300 );
+                $('#nav-primary').removeClass('js-has-moved');
+            }
+             
+        }
+        scrollPos = scroll;
+
+
+
     });
+
+
+
+    // function moveUpMenu() {
+    //   console.log('moveUP');
+    //     $('#nav-primary').animate({ top: '-55px' }, 300 );
+    //     $('#nav-secondary').animate({ top: '-20px' }, 300 );
+    // }
+
+    // function moveMenuDown() {
+    //   console.log('moveDown');
+    //   // if ( (menuTop - topOfPage) >= 45 ) {
+    //     $('#nav-primary').animate({ top: '0px' }, 300 );
+    //     $('#nav-secondary').animate({ top: '0px' }, 300 );
+    //   // }
+    // }
+
     // ********** END STICKY NAV ************ //
 
 
@@ -233,25 +288,35 @@ $( document ).ready(function() {
 
 
         // OPACITY FULL PAGE NAV
-
          if ( $('#nav-2-wrap').length ) {
-            //if closed, open
+                
             if( $('#nav-2-wrap').hasClass('js-open-marker') ) {
-
-                $('#nav-2-wrap').removeClass('js-z550');
+                //if open then close
                 $('#nav-2-wrap').animate({ 
                     opacity: 0,
                     top: '0px'
                 }, duration );
+
+                setTimeout( function() {
+                    $('#nav-2-wrap').removeClass('js-z550');
+                }, duration )
+
+                $('#nav-secondary').animate({ opacity: 1 }, 1000 ); 
+
             } else {
-                $('#nav-2-wrap').addClass('js-z550');
+                //if closed, open 
+                $('#nav-secondary').animate({ opacity: 0 }, 100 ); 
+                $('#nav-2-wrap').addClass('js-z550');   
                 $('#nav-2-wrap').animate({
                     opacity: 1,
                     top: '60px'
                 }, duration );
+                
+                
             }
 
             $('#nav-2-wrap').toggleClass('js-open-marker');
+
         }
 
 
@@ -292,10 +357,12 @@ $( document ).ready(function() {
 
 
 
-
+    var newUrl;
 
     $(".product-link").click( function() {
-        window.location.href = (window.location.href.replace('/#', '') + "product.html")
+        if (window.location.href.indexOf('product') <= 1) {
+          window.location.href = (window.location.href + 'product.html');
+        }
     });
 
     $(".home-link").click( function() {

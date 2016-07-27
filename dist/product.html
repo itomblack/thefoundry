@@ -11,6 +11,16 @@
   <title>Nuke</title>
 </head>
 <body>
+
+<div id="cover" class="cover">
+	 <div class="loader">
+        <div class="loader-inner cube-transition">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+</div>
+
 <div class="hide-over-x">
 	<!-- Primary nav -->
 	<div class="nav-primary opacity-2" id="nav-primary">
@@ -29,7 +39,7 @@
 	</div>
 
 	<!-- primary nav menu -->
-	<div class="nav-2-wrap back-grey0" id="nav-2-wrap">
+	<div class="nav-2-wrap back-grey0 js-closed-marker" id="nav-2-wrap">
 
 	<div class="nav-prod-wrap">
 
@@ -160,23 +170,28 @@
 		<div class="back-white clearfix margin-top-m10">
 
 			<!-- Secondary nav -->
-			<div id="second-nav-wrap" class="section-wrap padding-top-0" >
-				<div class="nav-secondary hidden-2" id="nav-secondary">
-					<div class="width-1440">
-						<div class="content-wrap">
-							<p class="size-14 inline-block">What's new in NUKE 10 <span class="arrow-icon"></span></p>
-							<div class="nav-links-rhs">
-								<a href="#">Features</a>
-								<a href="#">Releases</a>
-								<a href="#">Learn</a>
-								<a href="#">Tech Specs</a>
-								<a href="#">Developers</a>
-								<a href="#">FAQs</a>
-							</div>
-						</div>
-					</div>
+			<div id="second-nav-wrap" class="secondary-nav-wrap section-wrap padding-top-0 hidden-6">
+	<div class="nav-secondary" id="nav-secondary">
+		<div class="width-1440">
+			<div class="content-wrap">
+				<div class="hidden-menu-logo">
+					<img src="./img/logos/nuke-logo-grey.png" alt="" class="">
 				</div>
+				<p class="size-14 inline-block menu-new">What's new in NUKE 10 <span class="arrow-icon"></span></p>
+				<div class="nav-links-rhs">
+					<a href="#">Features</a>
+					<a href="#">Releases</a>
+					<a href="#">Learn</a>
+					<a href="#">Tech Specs</a>
+					<a href="#">Developers</a>
+					<a href="#">FAQs</a>
+				</div>
+				<div href="#" class="hidden-menu-item item-1">Try</div>
+				<div href="#" class="hidden-menu-item">Buy</div>
 			</div>
+		</div>
+	</div>
+</div>
 
 
 			<!-- Section NUKE -->
