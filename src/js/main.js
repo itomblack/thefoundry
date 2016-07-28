@@ -18,8 +18,13 @@ $( document ).ready(function() {
 
     function resizeCanvas() {
 		var windowWidth = $('body').width(); //was window.innerWidth;
+
+        //dont go smaller than this for mobile
+        if (windowWidth <= 700) { windowWidth = 900 }
+
         canvas.width = windowWidth;
         canvas.height = windowWidth*0.52;
+
         canvasVideo(); 
     }
 
@@ -93,12 +98,12 @@ $( document ).ready(function() {
     $.each($('.hidden-1'), function() { hidden1Items.push(this); });
     $.each($('.hidden-2'), function() { hidden2Items.push(this); });
 
-    $.each($('.hidden-3'), function() { hidden3Items.push(this); });
-    // $.each($('.hidden-3'), function() { 
-    //     if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed')==false)) {
-    //         hidden3Items.push(this);
-    //     }
-    // });
+    // $.each($('.hidden-3'), function() { hidden3Items.push(this); });
+    $.each($('.hidden-3'), function() { 
+        if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed')==false)) {
+            hidden3Items.push(this);
+        }
+    });
 
 
 
@@ -151,21 +156,21 @@ $( document ).ready(function() {
 
 
 
-    revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes);  
+    // revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes);  
     //test for hidden-3 + on scrolls
-    // $(window).scroll( function() {
+    $(window).scroll( function() {
 
-    //     hidden3Items = [];
+        hidden3Items = [];
 
-    //     $.each($('.hidden-3'), function() { 
-    //         if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed') == false ) ) {
-    //             hidden3Items.push(this);
-    //         }
-    //     });
+        $.each($('.hidden-3'), function() { 
+            if ( (isScrolledIntoView(this) == true ) && ($(this).hasClass('js-revealed') == false ) ) {
+                hidden3Items.push(this);
+            }
+        });
 
-    // 	revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes); 
+    	revealItemLoop(hidden3Items, true, timeBetweenScrolledOnes); 
 
-    // })
+    })
 
 
     // ********* END REVEAL ELEMENTS ************ //
@@ -260,35 +265,20 @@ $( document ).ready(function() {
     // ********** SHOW PRODUCT NAV-1 ************ //
 
     $('#nav-reveal').click( function(e) {
-        
         e.preventDefault();
+        menuRevealing();
+    })
+
+    $('#mobile-menu').click ( function(e) {
+        menuRevealing();
+    })
+
+    function menuRevealing() {
         var duration = 500;
         var navPrimHeight = $('#nav-primary').outerHeight();
         var navHiddenHeight = $('#nav-1-wrap').outerHeight();
 
         $('#nav-primary').toggleClass('js-back-black');
-
-
-
-        // MOVING BANNER NAV
-
-        // if ( $('#nav-1-wrap').length ) {
-        //     //if closed, open
-        //     if( $('#nav-1-wrap').hasClass('js-open-marker') ) {
-
-        //         $('#nav-1-wrap').animate({ top: -navHiddenHeight + "px" }, duration );
-        //         $('#content-all').animate({ marginTop: 0 + "px" }, duration );
-
-        //     } else {
-
-        //         $('#nav-1-wrap').animate({ top: navPrimHeight + "px" }, duration );
-        //         $('#content-all').animate({ marginTop: navPrimHeight + navHiddenHeight + "px" }, duration );
-            
-        //     }
-
-        //     $('#nav-1-wrap').toggleClass('js-open-marker');
-        // }
-            
 
 
 
@@ -323,12 +313,7 @@ $( document ).ready(function() {
             $('#nav-2-wrap').toggleClass('js-open-marker');
 
         }
-
-
-
-
-
-    })
+    }
 
     // ********** END SHOW PRODUCT NAV ************ //
 

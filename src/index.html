@@ -4,7 +4,7 @@
   @@include('./inc/head.html')
   <title>The Foundry</title>
 </head>
-<body>
+<body class="mobile">
 
 <div id="cover" class="cover">
 	 <div class="loader">
@@ -83,10 +83,17 @@
 			<div class="section-wrap back-white margin-top-90">
 				<div class="content-wrap-2">
 					<div class="section-LHS lhs-60 hidden-3">
+						<div class="mobile-only">
+							<h1>KATANA 2.5</br>WHAT’S NEW<span class="text-orange">.</span></h1>
+							<p>
+								We constantly receive inspiration for improvement from the most outstanding studios across many industries.
+							</p>
+							<button>See all the new features <span class="arrow-icon"></span></button>
+						</div>
 						<img src="./img/home/katana.png" alt="" class="img-upper-lhs">
 					</div>
 
-					<div class="section-RHS rhs-40 hidden-3">
+					<div class="section-RHS rhs-40 hidden-3 non-mobile">
 						<h1>KATANA 2.5</br>WHAT’S NEW<span class="text-orange">.</span></h1>
 						<p>
 							We constantly receive inspiration for improvement from the most outstanding studios across many industries.
@@ -99,11 +106,29 @@
 
 
 			<!-- Section SPARKLE -->
-			<img src="./img/home/articles.png" alt="" class="hidden-3">
+			<img src="./img/home/articles.png" alt="" class="hidden-3 non-mobile">
+			
+			<div class="mobile-only sparkle-mobile">
+				<img src="./img/home/article-mobile-1.png" alt="" class="hidden-3">
+				<div class="content-wrap margin-bot-60 hidden-3">
+					<p>
+						From light-touch invisible effects on period dramas to highly complex show stopping, Academy Award®-winning sequences in blockbuster movies, VFX artists and facilities of all sizes utilize The Foundry's software to create high-quality, inspirational content in post production.
+					</p>
+					<button>Read the full story <span class="arrow-icon"></span></button>
+				</div>
+	
+				<img src="./img/home/article-mobile-2.png" alt="" class="hidden-3">
+				<div class="content-wrap hidden-3">
+					<p>
+						MODO is often used as the primary 3D content creation tool by game development teams, or in conjunction with other 3D tools as part of a pipeline. Recent updates to MARI also provide games clients with the functionality they need to exactly replicate the look of assets in their games engine.
+					</p>
+					<button>Read the full story <span class="arrow-icon"></span></button>
+				</div>
+			</div>
 
 		
 			<!-- Section VR -->
-			<div class="section-wrap">
+			<div class="section-wrap non-mobile">
 				<img src="./img/home/vr-headset.png" alt="" class="hidden-3">
 				<div class="vr-text hidden-3">
 					<h1 class="text-white">EXPLORING VIRTUAL REALITY<span class="text-orange">.</span></h1>
@@ -111,6 +136,17 @@
 				</div>
 				<img src="./img/home/vr-video.png" alt="" class="margin-top-m300 hidden-3">
 			</div>
+
+			<div class="mobile-only mobile-vr-wrap">
+				<img src="./img/home/vr-head-mobile.png" alt="" class="hidden-3">
+				<div class="back-grey0 content-wrap vr-text-mobile-wrap hidden-3">
+					<h1 class="text-white">EXPLORING VIRTUAL REALITY<span class="text-orange">.</span></h1>
+					<h3 class="text-white">
+						Listen to John Starck, our Head of Research, explaining our direction in Virtual Reality.
+					</h3>
+				</div>
+			</div>
+			<img src="./img/home/vr-vid-mobile.png" alt="" class="hidden-3 mobile-only width-100">
 
 			<!-- Section INNOVATION -->
 			<div class="section-wrap back-white">
@@ -128,27 +164,37 @@
 			</div>
 
 			<!-- Section VIDEO REEL -->
-			<img src="./img/home/video-reel.png" alt="" class="margin-top-100 hidden-3">
+			<img src="./img/home/video-reel.png" alt="" class="margin-top-100 hidden-3 non-mobile">
+				
+			<div class="content-wrap width-100 mobile-only hidden-3">
+				<img src="./img/home/vid-reel-mob.png" alt="" class="margin-top-100 width-100">
+			</div>
+			
 		
 
 			<!-- Section COMMUNITY -->
 			<div class="section-wrap back-grey5 margin-top-160 margin-bot-160">
-				<div class="content-wrap-2 margin-top-80 margin-bot-100">
+				<div class="content-wrap-2 margin-top-80 margin-bot-100 community">
 					<div class="col-1-2 hidden-3">
-						<h2>Learn by being part of the community<span class="text-orange">.</span></h2>
-						<h3 class="text-grey2">
+						<h2 class="width-100">Learn by being part of the community<span class="text-orange">.</span></h2>
+						<h3 class="text-grey2 width-100">
 							Check in to our vibrant community to discover the latest learning materials and tips and tricks shared by community members.
 						</h3>
 						<a href="#" class="size-20 text-grey1">Download free trial <span class="arrow-icon"></span></a>
 					</div>
+					<img src="./img/home/profiles.png" alt="" class="hidden-3 mobile-only">
 				</div>
-				<img src="./img/home/community-blocks.png" alt="" class="comunity-img hidden-3">
-				<img src="./img/home/ask-anything.png" alt="" class="community-questions hidden-3">
+				<img src="./img/home/community-blocks.png" alt="" class="comunity-img hidden-3 non-mobile">
+				<img src="./img/home/ask-anything.png" alt="" class="community-questions hidden-3 non-mobile">
+
+				<img src="./img/home/ask-anything-mobile.png" alt="" class="community-q-mob hidden-3 mobile-only">
 			</div>
+
+			<img src="./img/home/mod-footer-mobile.png" alt="" class="mobile-only footer">
 
 
 			<!-- Section SIGGRAPH -->
-			<div class="">
+			<div class="non-mobile">
 				<img src="./img/home/siggraph.png" alt="" class="hidden-3">
 				<div class="text-white text-center siggraph-text hidden-3">
 						<h1>SIGGRAPH — 2016<span class="text-orange">.</span></h1>
@@ -158,7 +204,7 @@
 			</div>
 
 			<!-- Section VIDEO REEL -->
-			<div class="section-wrap hidden-3">
+			<div class="section-wrap hidden-3 non-mobile">
 				<div class="content-wrap-2 margin-bot-50">
 					<img src="./img/home/upcoming.png" alt="" class="">
 				</div>
@@ -166,7 +212,7 @@
 
 
 			<!-- section HELP -->
-			<div class="back-grey25 col-1-1 section-wrap height-650">
+			<div class="back-grey25 col-1-1 section-wrap height-650 non-mobile">
 				<div class="content-wrap-2">
 					<div class="col-2-3 margin-top-100 hidden-3">
 						<h2>Meet our support team<span class="text-orange">.</span></h2>
@@ -181,7 +227,8 @@
 			</div>
 
 			<!-- section footer -->
-			<img src="./img/ui-elements/footer.png" alt="" class="">
+			<img src="./img/ui-elements/footer.png" alt="" class="non-mobile">
+
 
 		</div>
 
