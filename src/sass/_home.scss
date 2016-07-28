@@ -196,9 +196,6 @@ button {
 		color: white;
 		max-width: 85%;
 	}
-	
-	@media screen and (max-width: 1350px) { top: 115px; }
-	@media screen and (max-width: 1500px) { top: 140px; }
 }
 
 .bar-separator {
@@ -584,7 +581,7 @@ button {
 
 
 .width-1440 {
-	width: 1440px;
+	width: 100%;
 	max-width: 1440px;
 	margin: 0 auto;
 }
@@ -598,7 +595,6 @@ button {
 	animation: all $long ease-in-out;
 	opacity: 0;
 	transform: translate(0,-16px);
-	// filter: blur(10px);
 }
 
 .hidden-6 {
@@ -734,7 +730,6 @@ button {
 	.menu-item-wrap {
 		transform: translateY(-30px);
 		opacity: 0;
-		// animation: all 0.3s ease-in-out;
 		&:nth-of-type(0){ animation: moveDown 0.3s 0s forwards ease-in-out; }
 		&:nth-of-type(1){ animation: moveDown 0.3s 0.05s forwards ease-in-out; }
 		&:nth-of-type(2){ animation: moveDown 0.3s 0.1s forwards ease-in-out; }
@@ -759,9 +754,6 @@ button {
 
 
 // ***************** END MENU ***************** //
-
-
-
 
 
 
@@ -880,18 +872,7 @@ button {
 
 
 
-
-
-
-
-
-
 .js-back-black { background-color: black; }
-
-
-
-
-
 
 
 .max-w-100perc { max-width: 100%; }
@@ -945,7 +926,4 @@ button {
 .inline-block { display: inline-block; }
 
 .clearfix { @include clearfix; }
-
-// .bar-after { border-right: 1px solid $orange; }
-// .margin-r-1em { margin-right: 1em; }
 
